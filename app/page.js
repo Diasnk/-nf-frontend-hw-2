@@ -1,5 +1,4 @@
 'use client'
-import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import TaskList from './components/TaskList';
 
@@ -48,7 +47,7 @@ export default function Home() {
     const uncompletedTasksCount = tasks.filter(task => !task.completed).length;
   
   return (
-    <div className="mx-auto p-4 ">
+    <div className="mx-auto p-4 h-screen bg-slate-300">
       <div className="flex justify-between items-center mb-4">
         <h1 className="text-4xl font-bold">Todo-list</h1>
         
@@ -96,12 +95,20 @@ export default function Home() {
               Completed
             </button>
           </div>
-          <button
-            onClick={() => setTasks(tasks.filter(task => !task.completed))}
-            className="text-gray-400 hover:text-white focus:outline-none"
-          >
-            Clear Completed
-          </button>
+          <div className='space-x-2.5'>
+            <button
+              onClick={() => setTasks(tasks.filter(task => !task.completed))}
+              className="text-gray-400 hover:text-white focus:outline-none"
+            >
+              Clear Completed
+            </button>
+            <button
+              onClick={() => setTasks(tasks.filter(task => ""))}
+              className="text-gray-400 hover:text-white focus:outline-none"
+            >
+              Clear All
+            </button>
+          </div>
         </div>
       </div>
     </div>
