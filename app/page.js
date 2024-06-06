@@ -55,7 +55,7 @@ export default function Home() {
       <div className="mb-4 flex items-center">
         <input
           type="text"
-          className="bg-gray-800 text-white border-none rounded p-4 flex-grow"
+          className="bg-gray-800 text-white border-none rounded p-4 flex-grow "
           placeholder="What to do?"
           value={newTaskText}
           onChange={(e) => setNewTaskText(e.target.value)}
